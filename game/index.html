@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senja Sky Courier — an original flight game</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; background: #0a1020; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: sans-serif;
+  }
+  #wrap { width: min(1280px, 100vw); }
+  canvas {
+    display: block; width: 100%; height: auto; background: #1c2450;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+  }
+  #hint {
+    color: #8fa0b8; text-align: center; font-size: 12px;
+    padding: 8px 0 0 0; margin: 0;
+  }
+  /* On a 720-tall window the hint would push the canvas off-centre and
+     peek into screenshots — hide it there; it shows on taller windows. */
+  @media (max-height: 760px) {
+    #hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="1280" height="720" aria-label="Senja Sky Courier game canvas"></canvas>
+  <p id="hint">SENJA SKY COURIER — Arrows / WASD fly · W/S throttle · SPACE drop cargo · G gear · P pause · M sound · Mouse steers · Click to start sound</p>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
